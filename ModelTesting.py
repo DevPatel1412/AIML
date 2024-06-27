@@ -12,7 +12,7 @@ with open('token.json') as config_file:
 HFT = config['HF_TOKEN']
 login(HFT)
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def load_model():
     tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b", use_auth_token=HFT)
     model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", use_auth_token=HFT)
