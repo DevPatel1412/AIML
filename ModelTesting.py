@@ -1,12 +1,15 @@
 import os
+import json
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from huggingface_hub import login
 
 
-# Load environment variables
+# Load configuration from config.json
+with open('token.json') as config_file:
+    config = json.load(config_file)
 
-HFT = os.environ['HF_TOKEN']
+HFT = config['HF_TOKEN']
 login(HFT)
 
 @st.cache(allow_output_mutation=True)
