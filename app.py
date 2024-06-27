@@ -1,13 +1,11 @@
 import os
-import json
+from dotenv import load_dotenv
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from huggingface_hub import login
 
-
-# Load configuration from config.json
-with open('token.json') as config_file:
-    config = json.load(config_file)
+# Load environment variables from .env file
+load_dotenv()
 
 HFT = config['HF_TOKEN']
 login(HFT)
