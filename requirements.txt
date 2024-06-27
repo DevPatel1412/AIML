@@ -1,4 +1,4 @@
-flask
+streamlit
 huggingface_hub
 transformers
 
